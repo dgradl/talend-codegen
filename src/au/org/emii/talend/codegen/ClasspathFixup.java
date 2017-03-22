@@ -34,7 +34,7 @@ public class ClasspathFixup {
                       
         String destinationZipFile = manager.getDestinationPath();
 
-        String tmpFolder = JavaJobExportReArchieveCreator.getTmpFolder();
+        String tmpFolder = JavaJobExportReArchieveCreator.getTmpDestinationFolder();
         try {
             // unzip to tmpFolder
             ZipToFile.unZipFile(zipFile, tmpFolder);
@@ -67,7 +67,6 @@ public class ClasspathFixup {
         } catch (Exception e) {
             System.out.println("" + e);
         } finally {
-            JavaJobExportReArchieveCreator.deleteTempFiles();
             JavaJobExportReArchieveCreator.deleteTempDestinationFiles();
             new File(zipFile).delete(); // delete the temp zip file
         }

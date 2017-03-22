@@ -32,6 +32,7 @@ import org.talend.core.model.repository.ERepositoryObjectType;
 import org.talend.core.model.repository.IRepositoryViewObject;
 import org.talend.core.repository.model.ProxyRepositoryFactory;
 import org.talend.core.repository.model.RepositoryFactoryProvider;
+import org.talend.core.ui.export.ArchiveFileExportOperationFullPath;
 import org.talend.designer.codegen.CodeGenInit;
 import org.talend.designer.codegen.CodeGeneratorActivator;
 import org.talend.designer.codegen.ITalendSynchronizer;
@@ -41,7 +42,6 @@ import org.talend.designer.runprocess.IProcessor;
 import org.talend.designer.runprocess.ItemCacheManager;
 import org.talend.designer.runprocess.ProcessorException;
 import org.talend.designer.runprocess.ProcessorUtilities;
-import org.talend.repository.documentation.ArchiveFileExportOperationFullPath;
 import org.talend.repository.documentation.ExportFileResource;
 import org.talend.repository.ui.wizards.exportjob.JavaJobExportReArchieveCreator;
 import org.talend.repository.ui.wizards.exportjob.scriptsmanager.JobJavaScriptsManager;
@@ -294,7 +294,7 @@ public class Generator implements IApplication {
         exportChoiceMap.put(ExportChoice.needJobScript, Params.getBooleanOption("-needJobScript", Boolean.TRUE));
         exportChoiceMap.put(ExportChoice.needContext, Params.getBooleanOption("-needContext", Boolean.FALSE));
         exportChoiceMap.put(ExportChoice.applyToChildren, Params.getBooleanOption("-applyToChildren", Boolean.FALSE));
-        exportChoiceMap.put(ExportChoice.setParameterValues, Params.getBooleanOption("-setParameterValues", Boolean.FALSE));
+        exportChoiceMap.put(ExportChoice.parameterValuesList, Params.getBooleanOption("-setParameterValues", Boolean.FALSE));
         
         return exportChoiceMap;
     }
